@@ -6,7 +6,11 @@ import { PublicKey } from '@solana/web3.js'
 
 async function main() {
     const umi = initUmi()
-    const merkleTree =  fromWeb3JsPublicKey(new PublicKey("2RyXoopf57v2E4bPkv127ibF2dADYwnAncBFfGgqtSkW"))
+    // old test: 2RyXoopf57v2E4bPkv127ibF2dADYwnAncBFfGgqtSkW
+    // 16+64    : 2inCcBj644hcPBhyLtkjjz7wbB2PoWAF9PufNaqqnxm9
+    // 14+64    : EWxvLAZPDGewYjmXTPKBrWgdsxzocGpcM4FmHSmwE8Tk
+
+    const merkleTree =  fromWeb3JsPublicKey(new PublicKey("EWxvLAZPDGewYjmXTPKBrWgdsxzocGpcM4FmHSmwE8Tk"))
     const merkleTreeAccount = await fetchMerkleTree(umi, merkleTree)
     console.log('merkleTreeAccount', merkleTreeAccount)
 }
